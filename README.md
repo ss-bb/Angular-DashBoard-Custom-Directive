@@ -6,8 +6,7 @@ An Angular Dashboard base on gridster which allow to manipulate custom Directive
 <!--Add gridster for Angular to your project -> https://github.com/ManifestWebDesign/angular-gridster     --> 
 
 ## DEMO 
-
-Here is a Demo package, I will create a gh-pages asap. 
+You can see the Demo in action <a href="http://ss-bb.github.io/Angular-DashBoard-Custom-Directive">Here</a>
 
 !! I haven't put the licence for all MIT I use here (leaflet/nvd3graph/gridster/etc)  , For the moment !!
 
