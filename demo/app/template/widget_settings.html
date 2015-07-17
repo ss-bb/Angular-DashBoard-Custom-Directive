@@ -58,6 +58,16 @@
 					</div>
 				</div>
 			</div>
+			<div class="row" ng-show="dispTypelist">
+				<div class="form-group" ng-class="{error: _form.content.$error && _form.submitted}">
+					<label class="control-label col-lg-3 col-md-3">Type</label>
+					<div class="col-lg-9 col-md-9">
+						<select name="type" ng-model="form.type" class="form-control">
+							<option ng-repeat="value in typeList" value="{{value}}">{{value}}</option>
+						</select>
+					</div>
+				</div>
+			</div>
 		</div>
 
 		<div class="modal-footer">

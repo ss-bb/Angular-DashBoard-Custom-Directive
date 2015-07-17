@@ -15,8 +15,20 @@ app.service('graphService',['$http','$q', function ($http,$q) {
 */
     }
 
+    function RecoverDetailGraph(){
+
+        return {
+            'array': ['tyre with searchTab','tyre','sensor','whatever'],
+            'graph': ['tyre','sensor','whatever'],
+            'map':   ['tyre','sensor','whatever'],
+            'image': ['whatever','whatever'],
+            'chart': ['tyre','sensor','whatever']
+        }
+    }
+
     return({
-        RecoverData: RecoverData
+        RecoverData: RecoverData,
+        RecoverDetailGraph: RecoverDetailGraph
     });
 
 }]);

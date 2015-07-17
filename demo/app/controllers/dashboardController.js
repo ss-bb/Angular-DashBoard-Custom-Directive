@@ -14,6 +14,8 @@ angular.module('app')
 		$scope.dispTypelist = false;
 		$scope.ContentList = graphService.RecoverData();
 		$scope.typeList = [""];
+
+		$scope.graphContentList = graphService.RecoverDetailGraph();
 		
 		//For leaflet Details
 		angular.extend($scope, {center: {lat: 45.783,lng: 3.083,zoom: 13}});
@@ -64,7 +66,6 @@ angular.module('app')
 		$scope.$watch('selectedDashboardId', function(newVal, oldVal) {
 			if (newVal !== oldVal) {
 				$scope.dashboard = $scope.dashboards[newVal];
-				$timeout(function(){$scope.afficherDirective($scope.dashboards[newVal]);},100);
 			} else {//Should never happend ? 
 				$scope.dashboard = $scope.dashboards[1];
 
@@ -111,6 +112,15 @@ angular.module('app')
 			content: widget.content,
 		};
 
+		$scope.$watch('form.content', function(newValue, oldValue) {
+			if(typeof(newValue) !== 'undefined'){
+				$scope.typeList = $scope.graphContentList[newValue];	
+				$scope.dispTypelist = true;
+			}
+			else
+				$scope.dispTypelist  = false;
+		});
+
 		$scope.sizeOptions = [{
 			id: '1',
 			name: '1'
@@ -151,15 +161,3 @@ angular.module('app')
 		return out;
 	}
 });
-
-//Get the directive from the content keyword.
-function getDirectiveHtmlCode(content){ // The Directive List I use Here. improve -> put into a Service !
-	switch(content){
-		case 'graph' 	:return '<nvd3-line-chart id="dunnoSomething" data="exampleLineData" margin="{left:40,top:10,bottom:30,right:10}" showXAxis="true" showYAxis="true" tooltips="true" interactive="true"></nvd3-line-chart>';
-		case 'array' 	:return '<my-array-display search="false"></my-array-display>';
-		case 'image' 	:return '<img class="ImgBoxes" src="images/whatever.jpg" alt="fu"></img>';
-		case 'map'		:return '<leaflet center="center"></leaflet>';
-		case 'chart'	:return '<nvd3-pie-chart data="examplePieData" showLegend="true" margin="{left:0,top:0,bottom:0,right:0}" x="xFunction()" y="yFunction()" showLabels="true" pieLabelsOutside="true" showValues="true" labelType="percent"></nvd3-pie-chart>';
-		default			:return '<p>Nothing to See HERE. </p>';
-	}
-}

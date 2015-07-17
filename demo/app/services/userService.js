@@ -51,7 +51,7 @@ app.service('userService',['$http','$q', function ($http,$q) {
                 alert('Impossible de récupéré les données du dashboard');
             });
         */
-        var widgets = [{col:0, row:0, sizeY:1, sizeX:2, name:"Widget 1", id:0, content:"array", type:"tyre"}, {col:2, row:0, sizeY:1, sizeX:1, name:"Widget 2", id:1, content:"image", type:"whatever"}, {name:"New Widget", sizeX:2, sizeY:2, id:2, row:0, col:3, content:"map"}, {name:"New Widget", sizeX:3, sizeY:1, id:3, row:1, col:0, content:"graph"}, {name:"New Widget", sizeX:1, sizeY:1, id:4, row:2, col:0, content:"chart", type:"tyre"}, {name:"New Widget", sizeX:3, sizeY:2, id:5, row:2, col:1, content:"array", type:"tyre with searchTab"}, {name:"New Widget", sizeX:1, sizeY:1, id:6, row:2, col:4, content:"image", type:"bib"}]
+        var widgets = [{col:0, row:0, sizeY:1, sizeX:2, name:"Widget 1", id:0, content:"array", type:"tyre"}, {col:2, row:0, sizeY:1, sizeX:1, name:"Widget 2", id:1, content:"image", type:"whatever"}, {name:"New Widget", sizeX:2, sizeY:2, id:2, row:0, col:3, content:"map"}, {name:"New Widget", sizeX:3, sizeY:1, id:3, row:1, col:0, content:"graph"}, {name:"New Widget", sizeX:1, sizeY:1, id:4, row:2, col:0, content:"chart", type:"tyre"}, {name:"New Widget", sizeX:3, sizeY:2, id:5, row:2, col:1, content:"array", type:"tyre with searchTab"}, {name:"New Widget", sizeX:1, sizeY:1, id:6, row:2, col:4, content:"image", type:"whatever"}]
 
 
         var length = Object.keys(base).length;
@@ -60,8 +60,6 @@ app.service('userService',['$http','$q', function ($http,$q) {
 
         return base;
     }
-
-
 
     return({
         saveDashboard: saveDashboard,
