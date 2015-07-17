@@ -1,4 +1,4 @@
-app.directive("test", function($compile,$rootScope,widgetService){
+app.directive("dynCustom", function($compile,$rootScope,widgetService){
     return({
       transclude:true,
       priority: 1000,
