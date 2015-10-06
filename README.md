@@ -1,7 +1,7 @@
 # Angular-DashBoard-Custom-Directive
-An Angular Dashboard base on gridster which allow to manipulate custom Directive with very few configuration.
+An Angular Dashboard base on gridster which allow to manipulate custom Directive.
 
-##File in review.
+##File in review for confidential protection.
 
 <!--Add gridster for Angular to your project -> https://github.com/ManifestWebDesign/angular-gridster     --> 
 
